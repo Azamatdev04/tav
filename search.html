@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JavaScriptda search funksiyasini yasash.JavaScript Создание Search Функции.JavaScript create function search">
+    <meta name="author" content="Uzbekdev">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Searchbox</title>
+
+<style>
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body{
+padding-top:40px;
+}
+.container{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+input{
+width:250px;
+height:40px;
+border:none;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+background:white;
+box-shadow:5px 5px 6px lightgray;
+text-align: center;
+outline:none;
+font-weight: 1000;
+font-size: 1em;
+}
+#myUl{
+list-style-type:none;
+padding:0;
+margin:0;
+}
+li{
+color:gray;
+font-weight:1000;
+display: none;
+padding: 10px;
+font-size: 20px;
+}
+h2{
+ color:#42a889;
+ text-align: center;
+}
+.fa:before{
+ color:gray;
+ content:"\f002";
+}
+</style>
+
+</head>
+<body>
+ <h2>Searchbox</h2>
+ <div class="container">
+<input type="text" name="txtValue" placeholder="Search..." id="myInput" onkeyup="myIn()">
+<ol id="myUl">
+<li class="search">HTML</li>
+<li class="search">CSS</li>
+<li class="search">JavaScript</li>
+<li class="search">Redux</li>
+<li class="search">Nodejs</li>
+<li class="search">React</li>
+</ol>
+</div>
+<script>
+function myIn(){
+let input=document.getElementById("myInput").value;
+input=input.toLowerCase();
+let x=document.getElementsByClassName("search");
+for(i=0;i<x.length;i++){
+ if(!x[i].innerHTML.toLowerCase().includes(input)){
+  x[i].style.display="block";
+ }else{
+  x[i].style.display="";
+}
+}
+}
+</script>
+</body>
+</html>
+
